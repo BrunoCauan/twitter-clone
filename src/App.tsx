@@ -12,13 +12,12 @@ export function App() {
 
             <MainContainer>
                 <BrowserRouter>
-                
-                <Routes>
-                    <Route path='/' element={<Navigate to='home' />} />
-                    <Route path='home' element={<Home />} />
-                    <Route path=':userName/tweets/:tweetId' element={<TweetDetail />} />
-                </Routes>
-            </BrowserRouter>
+                    <Routes>
+                        <Route path='/' element={<Navigate to='home' />} />
+                        <Route path='home' element={<Home />} />
+                        <Route path=':userName/tweets/:tweetId' element={<TweetDetail />} />
+                    </Routes>
+                </BrowserRouter>
             </MainContainer>
         </AppComponent>
     );
@@ -27,21 +26,21 @@ export function App() {
 const AppComponent = styled.div`
     min-height: 100vh;
     height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
 `;
 
 const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex: auto;
-    flex-grow: 2;
+    width: min(600px, 100%);
 
     & > * {
         border-left: 1px solid #38444d;
         border-right: 1px solid #38444d;
         width: 100%;
-        max-width: 600px;
         height: 100%;
 
         & > * {

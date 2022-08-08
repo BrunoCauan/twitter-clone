@@ -9,21 +9,6 @@ import { useFetch } from '../hooks/useFetch.hook';
 
 import { ReactComponent as Back } from '../assets/images/back.svg';
 
-const tweet: TweetModel = {
-    author: {
-        name: 'Brino',
-        userName: 'brunocauans',
-        profilePictureURL: '',
-        id: '123'
-    },
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    time: new Date(),
-    repliesCount: 0,
-    retweetsCount: 2,
-    likesCount: 10,
-    id: '123'
-};
-
 export function TweetDetail() {
     const params = useParams();
     const { data } = useFetch<TweetModel>(`tweets/${params.tweetId}`);
