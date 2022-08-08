@@ -102,8 +102,4 @@ const TweetListContent = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
-    max-width: 600px;
-    border-left: 1px solid #38444d;
-    border-right: 1px solid #38444d;
 `;

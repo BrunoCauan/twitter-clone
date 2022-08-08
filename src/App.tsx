@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { Nav } from './components/Nav.component';
 import { TweetList } from './components/TweetsList.component';
+import { NewTweet } from './components/NewTweet.component';
 
 export function App() {
     return (
@@ -13,6 +14,7 @@ export function App() {
                     <h2>Home</h2>
                 </MainHeader>
                 
+                <NewTweet />
                 <TweetList />
             </MainContainer>
         </Home>
@@ -31,19 +33,26 @@ const MainContainer = styled.main`
     align-items: flex-start;
     flex: auto;
     flex-grow: 2;
+
+    & > * {
+        border-left: 1px solid #38444d;
+        border-right: 1px solid #38444d;
+        width: 100%;
+        max-width: 600px;
+
+        & > * {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
 `;
 
 const MainHeader = styled.header`
     display: flex;
     align-items: center;
     height: 53px;
-    width: 100%;
-    max-width: 600px;
     background-color: #15202bbf;
     backdrop-filter: blur(12px);
-    padding: 0 16px;
-    border-left: 1px solid #38444d;
-    border-right: 1px solid #38444d;
     position: sticky;
     top: 0;
     left: 0;
