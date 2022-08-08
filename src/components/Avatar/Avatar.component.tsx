@@ -1,7 +1,7 @@
 
 import { UserModel } from '../../models/User.model';
 
-import profile from '../assets/images/profile.jpg';
+import profile from '../../assets/images/profile.jpg';
 import { AvatarContainer, AvatarRoot, AvatarImage, AvatarFallback } from './Avatar.styles';
 
 interface AvatarProps {

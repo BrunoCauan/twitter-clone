@@ -1,6 +1,7 @@
 import { Tweet } from '../Tweet/Tweet.component';
 import { TweetModel } from '../../models/Tweet.model';
 import { useFetch } from '../../hooks/useFetch.hook';
+import { Loading } from '../Loading/Loading.component';
 
 import { TweetListContent } from './TweetList.style';
 
@@ -9,7 +10,7 @@ export function TweetList() {
     
     return (
         <TweetListContent>
-            { data?.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) }
+            { data ? data.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) : <Loading /> }
         </TweetListContent>
     );
 }

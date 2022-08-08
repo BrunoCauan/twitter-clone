@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom';
 import { Tweet } from '../../components/Tweet/Tweet.component';
 import { TweetModel } from '../../models/Tweet.model';
 import { useFetch } from '../../hooks/useFetch.hook';
+import { Loading } from '../../components/Loading/Loading.component';
 
-import { ReactComponent as Back } from '../assets/images/back.svg';
+import { ReactComponent as Back } from '../../assets/images/back.svg';
 import { BackRoute, TweetDetailHeader } from './TweetDetail.styles';
 
 export function TweetDetail() {
@@ -15,7 +16,6 @@ export function TweetDetail() {
     return (
         <>
             <header>
-
                 <BackRoute to='/home'>
                     <Back />
                 </BackRoute>
@@ -24,7 +24,7 @@ export function TweetDetail() {
             </header>
             
             <div>
-                { data && <Tweet tweet={data}/> }
+                { data ? <Tweet tweet={data}/> : <Loading /> }
             </div>
         </>
     );
