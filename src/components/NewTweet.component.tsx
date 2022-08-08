@@ -32,6 +32,7 @@ const NewTweetContainer = styled.div`
     padding-top: 4px;
     padding-bottom: 12px;
     border-bottom: 1px solid #38444d;
+    height: auto !important;
 `;
 
 const NewTweetContent = styled.div`

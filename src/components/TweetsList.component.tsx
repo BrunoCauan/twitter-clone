@@ -2,98 +2,14 @@ import styled from 'styled-components';
 
 import { Tweet } from './Tweet.component';
 import { TweetModel } from '../models/Tweet.model';
-
-const tweetsList: TweetModel[] = [
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '123'
-    },
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '456'
-    },
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '789'
-    },
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '987'
-    },
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '654'
-    },
-    {
-        author: {
-            name: 'Brino',
-            userName: 'brunocauans',
-            profilePictureURL: '',
-            id: '123'
-        },
-        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-        time: new Date(),
-        repliesCount: 0,
-        retweetsCount: 2,
-        likesCount: 10,
-        id: '321'
-    },
-];
+import { useFetch } from '../hooks/useFetch.hook';
 
 export function TweetList() {  
+    const { data } = useFetch<TweetModel[]>('tweets');
+    
     return (
         <TweetListContent>
-            { tweetsList.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) }
+            { data?.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) }
         </TweetListContent>
     );
 }

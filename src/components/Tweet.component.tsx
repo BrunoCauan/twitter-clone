@@ -26,7 +26,7 @@ export function Tweet({ tweet }: TweetProps) {
                         </a>
 
                         <span className='heading-info'>
-                            @{ tweet.author.userName } · { tweet.time.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }
+                            @{ tweet.author.userName } · { new Date(tweet.time).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }
                         </span>
                     </TweetHeader>
                     

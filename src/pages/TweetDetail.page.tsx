@@ -1,9 +1,11 @@
 /// <reference types="vite-plugin-svgr/client" />
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Tweet } from '../components/Tweet.component';
 import { TweetModel } from '../models/Tweet.model';
+import { useFetch } from '../hooks/useFetch.hook';
 
 import { ReactComponent as Back } from '../assets/images/back.svg';
 
@@ -23,6 +25,9 @@ const tweet: TweetModel = {
 };
 
 export function TweetDetail() {
+    const params = useParams();
+    const { data } = useFetch<TweetModel>(`tweets/${params.tweetId}`);
+    
     return (
         <>
             <header>
@@ -35,7 +40,7 @@ export function TweetDetail() {
             </header>
             
             <div>
-                <Tweet tweet={tweet}/>
+                { data && <Tweet tweet={data}/> }
             </div>
         </>
     );
