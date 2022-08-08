@@ -1,45 +1,17 @@
 import styled from "styled-components";
 
-import { UserModel } from "../models/User.model";
-import { Avatar } from "./Avatar.component";
-
-const loggedUser: UserModel = {
-    name: 'Brino',
-    userName: 'brunocauans',
-    profilePictureURL: '',
-    id: '123'
-};
-
-export function NewTweet() {
-    return (
-        <NewTweetContainer>
-            <NewTweetContent>
-                <Avatar user={loggedUser}/>
-
-                <NewTweetForm>
-                    <textarea placeholder="What's Happening?"/>
-
-                    <CTAContainer>
-                        <button type="button">Tweet</button>
-                    </CTAContainer>
-                </NewTweetForm>
-            </NewTweetContent>
-        </NewTweetContainer>
-    );
-}
-
-const NewTweetContainer = styled.div`
+export const NewTweetContainer = styled.div`
     padding-top: 4px;
     padding-bottom: 12px;
     border-bottom: 1px solid #38444d;
     height: auto !important;
 `;
 
-const NewTweetContent = styled.div`
+export const NewTweetContent = styled.div`
     display: flex;
 `;
 
-const NewTweetForm = styled.div`
+export const NewTweetForm = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -67,7 +39,7 @@ const NewTweetForm = styled.div`
     }
 `;
 
-const CTAContainer = styled.div`
+export const CTAContainer = styled.div`
     display: flex;
     justify-content: flex-end;
 

@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 
-export function Nav() {
-    return (
-        <NavContainer>
-            <NavItem>X <span>Home</span></NavItem>
-            <NavItem>Y <span>Profile</span></NavItem>
-            <NavItem>Z <span>Logout</span></NavItem>
-        </NavContainer>
-    );
-}
 
-const NavContainer = styled.nav`
+export const NavContainer = styled.nav`
     position: fixed;
     bottom: 0;
     left: 0;
@@ -42,7 +33,7 @@ const NavContainer = styled.nav`
     }
 `;
 
-const NavItem = styled.div`
+export const NavItem = styled.div`
     > span {
         display: none;
     }
