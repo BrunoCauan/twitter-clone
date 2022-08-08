@@ -1,22 +1,23 @@
 import styled from 'styled-components';
 
-export function Header() {
+export function Nav() {
     return (
-        <HeaderContainer>
-            <HeaderContent>
-                Header
-            </HeaderContent>
-        </HeaderContainer>
+        <NavContainer>
+            <NavContent>
+                Nav
+            </NavContent>
+        </NavContainer>
     );
 }
 
-const HeaderContainer = styled.header`
+const NavContainer = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-grow: 1;
 `;
 
-const HeaderContent = styled.div`
+const NavContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

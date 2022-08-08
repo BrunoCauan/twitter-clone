@@ -45,25 +45,58 @@ const tweetsList: TweetModel[] = [
         retweetsCount: 2,
         likesCount: 10,
         id: '789'
-    }
+    },
+    {
+        author: {
+            name: 'Brino',
+            userName: 'brunocauans',
+            profilePictureURL: '',
+            id: '123'
+        },
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        time: new Date(),
+        repliesCount: 0,
+        retweetsCount: 2,
+        likesCount: 10,
+        id: '987'
+    },
+    {
+        author: {
+            name: 'Brino',
+            userName: 'brunocauans',
+            profilePictureURL: '',
+            id: '123'
+        },
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        time: new Date(),
+        repliesCount: 0,
+        retweetsCount: 2,
+        likesCount: 10,
+        id: '654'
+    },
+    {
+        author: {
+            name: 'Brino',
+            userName: 'brunocauans',
+            profilePictureURL: '',
+            id: '123'
+        },
+        text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        time: new Date(),
+        repliesCount: 0,
+        retweetsCount: 2,
+        likesCount: 10,
+        id: '321'
+    },
 ];
 
 export function TweetList() {  
     return (
-        <TweetListContainer>
-            <TweetListContent>
-                { tweetsList.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) }
-            </TweetListContent>
-        </TweetListContainer>
+        <TweetListContent>
+            { tweetsList.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) }
+        </TweetListContent>
     );
 }
-
-const TweetListContainer = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: auto;
-`;
 
 const TweetListContent = styled.div`
     display: flex;

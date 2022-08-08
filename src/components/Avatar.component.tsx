@@ -2,7 +2,7 @@ import * as RadixAvatar from '@radix-ui/react-avatar';
 import styled from 'styled-components';
 
 import { UserModel } from '../models/User.model';
-import profile from '../assets/images/profile.png';
+import profile from '../assets/images/profile.jpg';
 
 interface AvatarProps {
     user: UserModel;
