@@ -10,7 +10,7 @@ export function TweetList() {
     
     return (
         <TweetListContent>
-            { data ? data.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>) : <Loading /> }
+            { data ? data.map(tweet => <Tweet key={tweet.id} tweet={tweet} />) : <Loading /> }
         </TweetListContent>
     );
 }

@@ -1,5 +1,5 @@
 /// <reference types="vite-plugin-svgr/client" />
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { Tweet } from '../../components/Tweet/Tweet.component';
 import { TweetModel } from '../../models/Tweet.model';
@@ -11,8 +11,9 @@ import { BackRoute, TweetDetailHeader } from './TweetDetail.styles';
 
 export function TweetDetail() {
     const params = useParams();
-    const { data } = useFetch<TweetModel>(`tweets/${params.tweetId}`);
-    
+    const { state: prefetchedData } = useLocation();
+    const { data } = useFetch<TweetModel>(`tweets/${params.tweetId}`, prefetchedData);
+
     return (
         <>
             <header>

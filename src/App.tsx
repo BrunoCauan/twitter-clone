@@ -14,7 +14,7 @@ export function App() {
             <MainContainer>
                 <BrowserRouter>
                     <Routes>
-                        <Route path='/' element={<Navigate to='home' />} />
+                        <Route path='*' element={<Navigate to='home' />} />
                         <Route path='home' element={<Home />} />
                         <Route path=':userName/tweets/:tweetId' element={<TweetDetail />} />
                     </Routes>

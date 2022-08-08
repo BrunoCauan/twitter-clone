@@ -15,7 +15,7 @@ interface TweetProps {
 export function Tweet({ tweet }: TweetProps) { 
     return (
         <TweetContainer>
-            <StyledLink to={`/${tweet.author.userName}/tweets/${tweet.id}`}>
+            <StyledLink to={`/${tweet.author.userName}/tweets/${tweet.id}`} state={tweet}>
                 <Avatar user={tweet.author}/>
                 
                 <TweetContent>
