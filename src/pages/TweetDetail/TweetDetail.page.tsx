@@ -5,9 +5,8 @@ import { Tweet } from '../../components/Tweet/Tweet.component';
 import { TweetModel } from '../../models/Tweet.model';
 import { useFetch } from '../../hooks/useFetch.hook';
 import { Loading } from '../../components/Loading/Loading.component';
+import { Header } from '../../components/Header/Header.component';
 
-import { ReactComponent as Back } from '../../assets/icons/back.svg';
-import { BackRoute } from './TweetDetail.styles';
 
 export function TweetDetail() {
     const params = useParams();
@@ -16,13 +15,7 @@ export function TweetDetail() {
 
     return (
         <>
-            <header>
-                <BackRoute to='/home'>
-                    <Back />
-                </BackRoute>
-
-                <h2>Tweet</h2>
-            </header>
+            <Header title="Tweet" hasBackButton={true} />
             
             <div>
                 { data ? <Tweet tweet={data}/> : <Loading /> }

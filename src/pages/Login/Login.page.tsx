@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/User.context';
+import { Header } from '../../components/Header/Header.component';
 
 export function Login() {
     const { setUser } = useContext(UserContext);
@@ -19,9 +20,7 @@ export function Login() {
     
     return (
         <>
-            <header>
-                <h2>Login</h2>
-            </header>
+            <Header title="Login" />
 
             <div>
                 <button onClick={handleLogin}>Login</button>

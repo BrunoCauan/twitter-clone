@@ -1,9 +1,9 @@
+import { Header } from "../../components/Header/Header.component";
+
 export function Notifications() {
     return (
         <>
-            <header>
-                <h2>Notifications</h2>
-            </header>
+            <Header title="Notifications" />
         </>
     );
 }
