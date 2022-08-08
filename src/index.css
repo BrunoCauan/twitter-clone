@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #15202B;
+    color: #f7f9f9;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #f7f9f9;
+    text-decoration: none;
+}
