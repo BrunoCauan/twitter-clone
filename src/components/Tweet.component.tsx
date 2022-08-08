@@ -1,6 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 import { TweetModel } from '../models/Tweet.model';
 import { Avatar } from './Avatar.component';
@@ -16,56 +17,61 @@ interface TweetProps {
 export function Tweet({ tweet }: TweetProps) { 
     return (
         <TweetContainer>
-            <Avatar user={tweet.author}/>
-            
-            <TweetContent>
-                <TweetHeader>
-                    <a href={`profile/${tweet.author.userName}`}>
-                        {tweet.author.name}
-                    </a>
-
-                    <span className='heading-info'>
-                        @{ tweet.author.userName } · { tweet.time.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }
-                    </span>
-                </TweetHeader>
+            <StyledLink to={`/${tweet.author.userName}/tweets/${tweet.id}`}>
+                <Avatar user={tweet.author}/>
                 
-                <TweetText>{tweet.text}</TweetText>
-            
-                <TweetFooter>
-                    <TweetAction>
-                        <Replies />
+                <TweetContent>
+                    <TweetHeader>
+                        <a href={`profile/${tweet.author.userName}`}>
+                            {tweet.author.name}
+                        </a>
 
-                        {tweet?.repliesCount > 0 && 
-                            <span className='count'>{tweet.repliesCount}</span>                            
-                        }
-                    </TweetAction>
+                        <span className='heading-info'>
+                            @{ tweet.author.userName } · { tweet.time.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }
+                        </span>
+                    </TweetHeader>
                     
-                    <TweetAction>
-                        <Retweets />
+                    <TweetText>{tweet.text}</TweetText>
+                
+                    <TweetFooter>
+                        <TweetAction>
+                            <Replies />
 
-                        {tweet?.retweetsCount > 0 && 
-                            <span className='count'>{tweet.retweetsCount}</span>                            
-                        }
-                    </TweetAction>
-                    
-                    <TweetAction>
-                        <Likes />
+                            {tweet?.repliesCount > 0 && 
+                                <span className='count'>{tweet.repliesCount}</span>                            
+                            }
+                        </TweetAction>
                         
-                        {tweet?.likesCount > 0 && 
-                            <span className='count'>{tweet.likesCount}</span>                            
-                        }
-                    </TweetAction>
-                </TweetFooter>
-            </TweetContent>
+                        <TweetAction>
+                            <Retweets />
+
+                            {tweet?.retweetsCount > 0 && 
+                                <span className='count'>{tweet.retweetsCount}</span>                            
+                            }
+                        </TweetAction>
+                        
+                        <TweetAction>
+                            <Likes />
+                            
+                            {tweet?.likesCount > 0 && 
+                                <span className='count'>{tweet.likesCount}</span>                            
+                            }
+                        </TweetAction>
+                    </TweetFooter>
+                </TweetContent>
+            </StyledLink>
         </TweetContainer>
     )
 };
 
 const TweetContainer = styled.article`
-    display: flex;
     padding-top: 12px;
     padding-bottom: 12px;
     border-bottom: 1px solid #38444d;
+`;
+
+const StyledLink = styled(Link)`
+    display: flex;
 `;
 
 const TweetContent = styled.div``;
