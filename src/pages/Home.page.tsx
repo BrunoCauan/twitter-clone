@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { Nav } from '../components/Nav.component';
 import { TweetList } from '../components/TweetsList.component';
 import { NewTweet } from '../components/NewTweet.component';
 

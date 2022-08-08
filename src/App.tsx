@@ -53,7 +53,8 @@ const MainContainer = styled.main`
     header {
         display: flex;
         align-items: center;
-        height: 53px;
+        max-height: 53px;
+        min-height: 53px;
         background-color: #15202bbf;
         backdrop-filter: blur(12px);
         position: sticky;

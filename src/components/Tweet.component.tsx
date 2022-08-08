@@ -1,7 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
-
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import { TweetModel } from '../models/Tweet.model';
 import { Avatar } from './Avatar.component';
