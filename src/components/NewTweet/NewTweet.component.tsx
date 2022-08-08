@@ -1,18 +1,12 @@
 
-import { ChangeEvent, useRef, useState } from 'react';
-import { UserModel } from '../../models/User.model';
+import { ChangeEvent, useContext, useRef, useState } from 'react';
+import { UserContext } from '../../contexts/User.context';
 import { Avatar } from '../Avatar/Avatar.component';
 
 import { CTAContainer, NewTweetContainer, NewTweetContent, NewTweetForm } from './NewTweet.styles';
 
-const loggedUser: UserModel = {
-    name: 'Brino',
-    userName: 'brunocauans',
-    profilePictureURL: '',
-    id: '123'
-};
-
 export function NewTweet() {
+    const { user } = useContext(UserContext);
     const [tweet, setTweet] = useState('');
     const textarea = useRef<HTMLTextAreaElement>(null);
 
@@ -36,12 +30,13 @@ export function NewTweet() {
         }
 
         console.log(tweet.trim());
+        console.log(user?.name);
     };
     
     return (
         <NewTweetContainer>
             <NewTweetContent>
-                <Avatar user={loggedUser}/>
+                <Avatar user={user}/>
 
                 <NewTweetForm>
                     <textarea ref={textarea} placeholder="What's Happening?" maxLength={140} value={tweet} onChange={handleTweetChange}/>

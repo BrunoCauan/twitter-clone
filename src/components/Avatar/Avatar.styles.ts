@@ -34,4 +34,5 @@ export const AvatarFallback = styled(RadixAvatar.Fallback)`
     font-size: 15;
     line-height: 1;
     font-weight: 500;
+    background-color: #38444d;
 `;

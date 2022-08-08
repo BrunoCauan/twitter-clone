@@ -1,15 +1,19 @@
 /// <reference types="vite-plugin-svgr/client" />
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/User.context';
 
 import { NavContainer, NavItem } from "./Nav.styles";
 
-import { ReactComponent as LogoIcon } from '../../assets/images/logo.svg';
-import { ReactComponent as HomeIcon } from '../../assets/images/home.svg';
-import { ReactComponent as NotificationsIcon } from '../../assets/images/notifications.svg';
-import { ReactComponent as MessagesIcon } from '../../assets/images/messages.svg';
-import { ReactComponent as ProfileIcon } from '../../assets/images/profile.svg';
-import { ReactComponent as MoreIcon } from '../../assets/images/more.svg';
+import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
+import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg';
+import { ReactComponent as NotificationsIcon } from '../../assets/icons/notifications.svg';
+import { ReactComponent as MessagesIcon } from '../../assets/icons/messages.svg';
+import { ReactComponent as ProfileIcon } from '../../assets/icons/profile.svg';
+import { ReactComponent as MoreIcon } from '../../assets/icons/more.svg';
 
 export function Nav() {
+    const { user } = useContext(UserContext);
+
     return (
         <NavContainer>
             <NavItem to="/home" className="mobile-hidden">
@@ -34,7 +38,7 @@ export function Nav() {
                 <span>Messages</span>
             </NavItem>
             
-            <NavItem to="/profile" className="mobile-hidden">
+            <NavItem to={`/${user?.userName}`} className="mobile-hidden">
                 <ProfileIcon />
 
                 <span>Profile</span>

@@ -3,9 +3,9 @@
 import { TweetModel } from '../../models/Tweet.model';
 import { Avatar } from '../Avatar/Avatar.component';
 
-import { ReactComponent as Replies } from '../../assets/images/replies.svg';
-import { ReactComponent as Retweets } from '../../assets/images/retweets.svg';
-import { ReactComponent as Likes } from '../../assets/images/likes.svg';
+import { ReactComponent as Replies } from '../../assets/icons/replies.svg';
+import { ReactComponent as Retweets } from '../../assets/icons/retweets.svg';
+import { ReactComponent as Likes } from '../../assets/icons/likes.svg';
 import { StyledLink, TweetAction, TweetContainer, TweetContent, TweetFooter, TweetHeader, TweetText } from './Tweet.style';
 
 interface TweetProps {

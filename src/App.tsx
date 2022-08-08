@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes as Switch, Route, Navigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import { Login } from './pages/Login/Login.page';
 import { Register } from './pages/Register/Register.page';
@@ -10,29 +11,33 @@ import { Notifications } from './pages/Notifications/Notifications.page';
 import { Messages } from './pages/Messages/Messages.page';
 
 import { AppComponent, MainContainer } from './App.styles';
-
-const isLoggedIn: boolean = true;
+import { UserContext } from './contexts/User.context';
+import { UserModel } from './models/User.model';
 
 export function App() {
+    const [user, setUser] = useState<UserModel | null>(null);
+
     return (
         <BrowserRouter>
-            {getRoutes()}
+            <UserContext.Provider value={{ user, setUser }}>
+                { Routes(user) }
+            </UserContext.Provider>
         </BrowserRouter>
     );
 }
 
-function getRoutes() {
-    if (isLoggedIn) {
+function Routes(user: UserModel | null) {
+    if (user) {
         return AuthorizedRoutes();
     }
     
     return (
-        <Routes>
+        <Switch>
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='*' element={<Navigate to='login' />} />
-        </Routes>
-    )
+        </Switch>
+    );
 }
 
 function AuthorizedRoutes() {
@@ -41,15 +46,15 @@ function AuthorizedRoutes() {
             <Nav />
 
             <MainContainer>
-                <Routes>
+                <Switch>
                     <Route path='/home' element={<Home />} />
                     <Route path=':userName/tweets/:tweetId' element={<TweetDetail />} />
                     <Route path=':userName' element={<Profile />} />
                     <Route path='/notifications' element={<Notifications />} />
                     <Route path='/messages' element={<Messages />} />
                     <Route path='*' element={<Navigate to='home' />} />
-                </Routes>
+                </Switch>
             </MainContainer>
         </AppComponent>
-    )
+    );
 }

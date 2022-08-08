@@ -6,7 +6,7 @@ import { TweetModel } from '../../models/Tweet.model';
 import { useFetch } from '../../hooks/useFetch.hook';
 import { Loading } from '../../components/Loading/Loading.component';
 
-import { ReactComponent as Back } from '../../assets/images/back.svg';
+import { ReactComponent as Back } from '../../assets/icons/back.svg';
 import { BackRoute } from './TweetDetail.styles';
 
 export function TweetDetail() {
