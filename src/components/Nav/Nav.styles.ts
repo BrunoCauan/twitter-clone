@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -35,7 +35,7 @@ export const NavContainer = styled.nav`
     }
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled(NavLink)`
     display: flex;
     color: #f7f9f9;
     padding: 12px;
@@ -53,6 +53,24 @@ export const NavItem = styled(Link)`
         width: 26.5px;
         height: 26.5px;
         fill: #f7f9f9;
+
+        &.active {
+            display: none;
+        }
+    }
+
+    &.active {
+        svg.active {
+            display: inline;
+
+            &+svg {
+                display: none;
+            }
+        }
+
+        span {
+            font-weight: 700;
+        }
     }
     
     span {
