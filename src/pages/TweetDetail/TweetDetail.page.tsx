@@ -7,7 +7,7 @@ import { useFetch } from '../../hooks/useFetch.hook';
 import { Loading } from '../../components/Loading/Loading.component';
 
 import { ReactComponent as Back } from '../../assets/images/back.svg';
-import { BackRoute, TweetDetailHeader } from './TweetDetail.styles';
+import { BackRoute } from './TweetDetail.styles';
 
 export function TweetDetail() {
     const params = useParams();
@@ -21,7 +21,7 @@ export function TweetDetail() {
                     <Back />
                 </BackRoute>
 
-                <TweetDetailHeader>Tweet</TweetDetailHeader>
+                <h2>Tweet</h2>
             </header>
             
             <div>

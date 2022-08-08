@@ -36,5 +36,12 @@ export const MainContainer = styled.main`
         position: sticky;
         top: 0;
         left: 0;
+
+        h2 {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
     }
 `;

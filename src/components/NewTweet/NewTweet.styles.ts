@@ -42,6 +42,13 @@ export const NewTweetForm = styled.div`
 export const CTAContainer = styled.div`
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+
+    span {
+        margin-right: 8px;
+        font-size: 14px;
+        color: #8b98a5;
+    }
 
     button {
         background-color: #1d9bf0;

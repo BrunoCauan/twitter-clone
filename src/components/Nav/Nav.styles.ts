@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -20,6 +21,7 @@ export const NavContainer = styled.nav`
 
     @media (min-width: 600px) {
         position: sticky;
+        top: 0;
         z-index: 0;
         
         flex-direction: column;
@@ -33,13 +35,44 @@ export const NavContainer = styled.nav`
     }
 `;
 
-export const NavItem = styled.div`
-    > span {
+export const NavItem = styled(Link)`
+    display: flex;
+    color: #f7f9f9;
+    padding: 12px;
+    width: 100%;
+    border-radius: 9999px;
+    margin-bottom: 8px;
+    align-items: center;
+    justify-content: center;
+
+    &.mobile-hidden {
         display: none;
     }
 
+    svg {
+        width: 26.5px;
+        height: 26.5px;
+        fill: #f7f9f9;
+    }
+    
+    span {
+        display: none;
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: 20px;
+        margin-right: 16px;
+    }
+
+    @media (min-width: 600px) {
+        &.mobile-hidden {
+            display: flex;
+        }
+    }
+
     @media (min-width: 1200px) {
-        > span {
+        justify-content: flex-start;
+
+        span {
             display: inline;
         }
     }

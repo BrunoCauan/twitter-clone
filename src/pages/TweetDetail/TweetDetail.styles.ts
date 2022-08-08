@@ -13,10 +13,3 @@ export const BackRoute = styled(Link)`
         fill: #eff3f4;
     }
 `;
-
-export const TweetDetailHeader = styled.h2`
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    margin: 0;
-`;
